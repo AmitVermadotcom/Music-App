@@ -143,7 +143,8 @@ function optionmodal(){
         let modal = document.createElement("div");
         modal.classList.add("modal");
         modal.innerHTML=`<div id="mute" onclick="muted()" ><img src="https://img.icons8.com/ios-filled/20/000000/mute--v1.png"/></div>
-        <div id="autoplay" onclick="playinloop()"><i class="fa fa-circle-o-notch" aria-hidden="true"></i></div>`;
+        <div id="autoplay" onclick="playinloop()"><i class="fa fa-circle-o-notch" aria-hidden="true"></i></div>
+        <div onclick="showPlaylist()" id="playlist"><img src="https://img.icons8.com/android/24/000000/menu.png"/></div>`;
         document.querySelector(".playing").append(modal);
         modalcond = true;
     }
@@ -218,25 +219,60 @@ function muted(){
 }
 
 
-
-
-for(let i=0;i<Allsongs.length;i++){
+// playlist Addition
+let show=false;
+function showPlaylist(){
+  if(!show){
+    for(let i=0;i<Allsongs.length;i++){
+        let songlist = document.querySelector(".songs_list");
+        let col = document.getElementById("playlist");
+        col.style.backgroundColor = "#ffbfb7";
+        songlist.style.height = "70vh";
+        songlist.style.width = "30vw";
+        let song1 = document.createElement("div");
+        song1.classList.add("song1");
+        song1.innerHTML=`<div class="songDetails">
+                        <div class="songName">${Allsongs[i].name}</div>
+                        <div class="artistName">${Allsongs[i].singer}</div>
+                        </div>
+                        <div id="listplay" onclick="lalal(${i})"><i  class="fa fa-play" aria-hidden="true"></i></div>`;
+    
+                        songlist.append(song1);
+    
+        // document.querySelector(".songName").innerText = Allsongs[i].name;
+        // document.querySelector(".artistName").innerText = Allsongs[i].singer;
+        // setTimeout(function(){
+    
+        // },2000);
+    
+    }
+    
+    
+  }
+  else{
+    let col = document.getElementById("playlist");
+    col.style.backgroundColor = "";
     let songlist = document.querySelector(".songs_list");
+    songlist.style.height = "7vh";
+    songlist.style.width = "15vw";
+    for(let m=0;m<Allsongs.length;m++){
+        document.querySelector(".song1").remove();
+    }
+  }
+  show=!show;
+}
 
-    let song1 = document.createElement("div");
-    song1.classList.add("song1");
-    song1.innerHTML=`<div class="songDetails">
-                    <div class="songName">${Allsongs[i].name}</div>
-                    <div class="artistName">${Allsongs[i].singer}</div>
-                    </div>
-                    <div id="listplay"><i class="fa fa-play" aria-hidden="true"></i></div>`;
-
-                    songlist.append(song1);
-
-    // document.querySelector(".songName").innerText = Allsongs[i].name;
-    // document.querySelector(".artistName").innerText = Allsongs[i].singer;
-    setTimeout(function(){
-
-    },2000);
-
+let crossCheck=-1;
+function lalal(i){
+    let toCheck=i;
+    // console.log(i);
+    if(toCheck != crossCheck){
+        loadTrack(i);
+        playSong();
+        crossCheck=toCheck;
+    }
+    else{
+        pauseSong();
+        crossCheck=-1;
+    }
 }
