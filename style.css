@@ -11,34 +11,90 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #1C2833;
+	background: #bddfff;
+}
+.name{
+	position: absolute;
+	top: 40px;
+	font-size: xx-large;
+	font-family:cursive;
+}
+.playing {
+	position: relative;
+	height: 70vh;
+	width: 25vw;
+	text-align: center;
+	background:linear-gradient(to bottom, #d1c7f7, #34179e);
+	border-radius: 20px;
+	box-shadow: 1px 0px 7px 5px rgb(240 240 240 / 20%);
 }
 
 .main{
 	display: flex;
-	/* justify-content: space-evenly;
-	align-items: center; */
+	justify-content: space-between;
+	align-items: center; 
 }
 
 .songs_list{
-	/* position: relative; */
+	position: absolute;
+	top: 18vh;
+	left: 25px;
 	height: 65vh;
 	width: 30vw;
-	text-align: center;
-	background:linear-gradient(to right, #5D6D7E, #566573);
+	/* text-align: center; */
+	background:linear-gradient(to bottom, #5531e7, #c7bee9);
 	border-radius: 20px;
 	box-shadow: 1px 0px 7px 1px rgb(240 240 240 / 20%);
+	overflow-y: scroll;
 }
 
-.playing {
-	position: relative;
-	height: 65vh;
-	width: 30vw;
-	text-align: center;
-	background:linear-gradient(to right, #5D6D7E, #566573);
-	border-radius: 20px;
+.songs_list::-webkit-scrollbar {
+	display: none;
+  }
+
+.song1{
+	margin-left: 15px;
 	box-shadow: 1px 0px 7px 1px rgb(240 240 240 / 20%);
+	background:linear-gradient(to bottom, #31a4e7, #c7bee9);
+	width: 90%;
+	height: 20%;
+	border-radius: 20px;
+	position: relative;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	/* overflow-y: scroll; */
 }
+
+#listplay {
+	position: absolute;
+	right: 40px;
+	top: 14px;
+	background-color: salmon;
+	height: 50px;
+	width: 50px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.songDetails{
+	height: 20%;
+	/* width: 80%; */
+	margin-top: 20px;
+	margin-bottom: 10px;
+	margin-left: 15px;
+}
+
+.songName ,.artistName{
+	padding-top: 10px;
+	font-size: 20px;
+	font-weight: 600;
+}
+.artistName {
+	font-size: 15px;
+}
+
 
 #logo {
 	position: absolute;
@@ -56,7 +112,7 @@ body{
 	position: absolute;
 	top: 20px;
 	right: 25px;
-	color: #ccc;
+	color: #fff;
 	cursor: pointer;
 	box-shadow: 0.1px 8px 8px 2px rgba(0,0,0,0.2);
 	height: 40px;
@@ -72,7 +128,7 @@ body{
 #mute, #autoplay{
 	position: absolute;
 	top: 20px;
-	color: #ccc;
+	color: rgb(247, 247, 247);
 	cursor: pointer;
 	box-shadow: 0.1px 8px 8px 2px rgba(0,0,0,0.2);
 	height: 40px;
@@ -91,8 +147,9 @@ body{
 }
 
 #mute:hover , #autoplay:hover, #options:hover {
-	background-color: #ff614f;
+	background-color: #e75f4d;
 }
+
 #song_image {
 	margin-top: 70px;
 	margin-bottom: 20px;
@@ -157,13 +214,15 @@ button{
 
 #volume_icon {
 	position: absolute;
-	bottom: 61px;
-	right:25px;
+	bottom: 93px;
+	right:8px;
 }
 
 #volumeUp {
 	-webkit-appearance: slider-vertical;
+	--fill-color: linear-gradient(to right, LightCyan, var(--primary-color));
+	background-color: rgb(215, 250, 229);
 	position: absolute;
-	bottom: 150px;
+	bottom: 180px;
 	cursor: pointer;
 }

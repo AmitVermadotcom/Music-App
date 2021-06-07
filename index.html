@@ -9,17 +9,22 @@
 	<title>Document</title>
 </head>
 <body>
+	<div class="name">BAJAO</div>
 	<div class="main">
-		<div class="songs_list">
-			<div class="song1">
-				<img src="" alt="">
-				<div class="songName">songname
+		
+		<div class="songs_list show">
+			<span class="song1">List</span>
+			<!-- <div class="song1">
+				<div class="songDetails">
+					<div class="songName">songname</div>
+					<div class="artistName">artist</div>
 				</div>
-				<div class="artistName">artist</div>
-			</div>
-		</div>
+				<div id="listplay"><i class="fa fa-play" aria-hidden="true"></i></div>
+			</div> -->
+			
+		</div> 
 		<div class="playing">
-			<div id="logo"><i class="fa fa-music" aria-hidden="true"></i>Music
+			<div id="logo"><img src="https://img.icons8.com/office/35/000000/musical-notes.png"/>
 			</div>
 			<!-- <div class="modal">
 				<div id="mute" ><img src="https://img.icons8.com/ios-filled/20/000000/mute--v1.png"/></div>
@@ -34,9 +39,8 @@
 			<div class="sliders">
 				<input type="range" id="duration_slider" min="0" max="100" value="0" onchange="change_duration()">
 				<!-- <input type="range" min="0" max="100" value="90" onchange="volume_change()" id="volume"> -->
-
 			</div>
-			<button onclick="volumeModal()" id="volume_icon"><img src="https://img.icons8.com/ios-filled/30/000000/speaker.png"/></button>
+			<button onclick="volumeModal()" id="volume_icon"><img src="https://img.icons8.com/ios-filled/25/000000/speaker.png"/></button>
 			<div class="buttons">
 				<button onclick="preSong()" id="pre_song"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
 				<button onclick="justplay()" id="play" ><i class="fa fa-play" aria-hidden="true"></i></button>

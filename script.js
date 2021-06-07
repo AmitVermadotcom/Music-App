@@ -12,7 +12,7 @@ let autoplay = false;
 let track = document.createElement('audio');
 let Allsongs = [
     {
-        name : "first Song",
+        name : "freak the freak out",
         path : "./songs/song1.mpeg",
         img : "./img/img1.jpg",
         singer : "First singer"
@@ -20,17 +20,17 @@ let Allsongs = [
     },
 
     {
-        name : "second Song",
+        name : "CHAIYA CHAIYA REMIX",
         path : "./songs/song2.mpeg",
         img : "./img/img2.jpg",
-        singer : "Second singer"
+        singer : "Shaktimaan"
 
     },
     {
-        name : "third Song",
+        name : "Ilahi",
         path : "./songs/song3.mpeg",
         img : "./img/img3.jpg",
-        singer : "third singer"
+        singer : "junior jii"
 
     },
     {
@@ -173,18 +173,22 @@ let isVolumeModal=false;
 function volumeModal(){
     let sliders = document.querySelector(".sliders");
     if(!isVolumeModal){
+        let vol = track.volume * 100;
+        console.log(vol);
         let inputVol = document.createElement("input");
         
         inputVol.min=0;
         inputVol.max=100;
         inputVol.setAttribute("type","range");
-        inputVol.setAttribute("value","90");
+        inputVol.setAttribute("value",`${vol}`);
         inputVol.setAttribute("id","volumeUp");
         inputVol.setAttribute("onchange","volume_change()");
         sliders.append(inputVol);
         isVolumeModal=true;
+
     }
     else{
+
         let volumeUp = document.querySelector("#volumeUp");
         volumeUp.remove();
         isVolumeModal=false;
@@ -211,4 +215,28 @@ function muted(){
         track.volume=0;
         mute=true;
     }
+}
+
+
+
+
+for(let i=0;i<Allsongs.length;i++){
+    let songlist = document.querySelector(".songs_list");
+
+    let song1 = document.createElement("div");
+    song1.classList.add("song1");
+    song1.innerHTML=`<div class="songDetails">
+                    <div class="songName">${Allsongs[i].name}</div>
+                    <div class="artistName">${Allsongs[i].singer}</div>
+                    </div>
+                    <div id="listplay"><i class="fa fa-play" aria-hidden="true"></i></div>`;
+
+                    songlist.append(song1);
+
+    // document.querySelector(".songName").innerText = Allsongs[i].name;
+    // document.querySelector(".artistName").innerText = Allsongs[i].singer;
+    setTimeout(function(){
+
+    },2000);
+
 }
