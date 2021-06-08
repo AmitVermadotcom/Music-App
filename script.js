@@ -15,37 +15,37 @@ let Allsongs = [
         name : "freak the freak out",
         path : "./songs/song1.mpeg",
         img : "./img/img1.jpg",
-        singer : "First singer"
-
+        singer : "First singer",
+        bgcolor : "#ffe1df"
     },
 
     {
         name : "CHAIYA CHAIYA REMIX",
         path : "./songs/song2.mpeg",
         img : "./img/img2.jpg",
-        singer : "Shaktimaan"
-
+        singer : "Shaktimaan",
+        bgcolor : "#f5eaea"
     },
     {
         name : "Ilahi",
         path : "./songs/song3.mpeg",
         img : "./img/img3.jpg",
-        singer : "junior jii"
-
+        singer : "junior jii",
+        bgcolor : "#ffb8cd"
     },
     {
         name : "fourth Song",
         path : "./songs/song4.mp4",
         img : "./img/img4.jpg",
-        singer : "fourth singer"
-
+        singer : "fourth singer",
+        bgcolor : "#dadada"
     },
     {
         name : "fifth Song",
         path : "./songs/song5.mpeg",
         img : "./img/img5.jpg",
-        singer : "fifth singer"
-
+        singer : "fifth singer",
+        bgcolor : "#e1f8fc"
     },
 
 ]
@@ -59,6 +59,7 @@ function loadTrack(idx){
     artist.innerText=Allsongs[idx].singer;
     track_img.src = Allsongs[idx].img;
     track.load();
+    document.querySelector("body").style.backgroundColor=Allsongs[idx].bgcolor;
     timer = setInterval(range_slider ,1500);
 }
 
