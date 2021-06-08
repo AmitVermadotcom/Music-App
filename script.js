@@ -232,7 +232,7 @@ function showPlaylist(){
         document.querySelector(".list_heading").innerHTML = `<img onclick="showPlaylist()" src="https://img.icons8.com/ios-glyphs/40/000000/music-transcript.png"/><div class="text" >My Playlist</div>`
 
         songlist.style.height = "70vh";
-        songlist.style.width = "30vw";
+        songlist.style.width = "25vw";
         let song1 = document.createElement("div");
         song1.classList.add("song1");
         song1.innerHTML=`<div class="songDetails">
