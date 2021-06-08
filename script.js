@@ -221,12 +221,15 @@ function muted(){
 
 // playlist Addition
 let show=false;
+// showPlaylist();
 function showPlaylist(){
   if(!show){
     for(let i=0;i<Allsongs.length;i++){
         let songlist = document.querySelector(".songs_list");
-        let col = document.getElementById("playlist");
-        col.style.backgroundColor = "#ffbfb7";
+        // let col = document.getElementById("playlist");
+        // col.style.backgroundColor = "#ffbfb7";
+        document.querySelector(".list_heading").innerHTML = `<img onclick="showPlaylist()" src="https://img.icons8.com/ios-glyphs/40/000000/music-transcript.png"/><div class="text" >My Playlist</div>`
+
         songlist.style.height = "70vh";
         songlist.style.width = "30vw";
         let song1 = document.createElement("div");
@@ -250,11 +253,13 @@ function showPlaylist(){
     
   }
   else{
-    let col = document.getElementById("playlist");
-    col.style.backgroundColor = "";
+    // let col = document.getElementById("playlist");
+    // col.style.backgroundColor = "";
     let songlist = document.querySelector(".songs_list");
-    songlist.style.height = "7vh";
-    songlist.style.width = "15vw";
+    songlist.style.height = "8vh";
+    songlist.style.width = "5vw";
+    document.querySelector(".list_heading").innerHTML = `<img onclick="showPlaylist()" src="https://img.icons8.com/ios-glyphs/40/000000/music-transcript.png"/>`
+    // songlist.style.borderRadius = "50%"
     for(let m=0;m<Allsongs.length;m++){
         document.querySelector(".song1").remove();
     }
