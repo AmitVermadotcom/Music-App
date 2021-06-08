@@ -59,7 +59,7 @@ function loadTrack(idx){
     artist.innerText=Allsongs[idx].singer;
     track_img.src = Allsongs[idx].img;
     track.load();
-    timer = setInterval(range_slider ,1000);
+    timer = setInterval(range_slider ,1500);
 }
 
 loadTrack(index);
@@ -257,7 +257,7 @@ function showPlaylist(){
     // col.style.backgroundColor = "";
     let songlist = document.querySelector(".songs_list");
     songlist.style.height = "8vh";
-    songlist.style.width = "5vw";
+    songlist.style.width = "4vw";
     document.querySelector(".list_heading").innerHTML = `<img onclick="showPlaylist()" src="https://img.icons8.com/ios-glyphs/40/000000/music-transcript.png"/>`
     // songlist.style.borderRadius = "50%"
     for(let m=0;m<Allsongs.length;m++){

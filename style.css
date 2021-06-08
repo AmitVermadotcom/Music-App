@@ -55,7 +55,7 @@ body{
 	top: 15vh;
 	left: 25px;
 	height: 8vh;
-	width: 5vw;
+	width: 4vw;
 	background:linear-gradient(to bottom,  #59b8f7, #99ffa2);
 	border-radius: 20px;
 	/* box-shadow: 1px 0px 7px 1px rgb(240 240 240 / 20%); */
@@ -95,7 +95,9 @@ body{
 }
 .list_heading img{
 	margin-left: 5px;
+	cursor: pointer;
 }
+
 
 #listplay {
 	position: absolute;
@@ -130,7 +132,7 @@ body{
 	left: 25px;
 	/* color: #ccc; */
 	font-size: 20px;
-	box-shadow: 0.1px 18px 18px 2px rgba(0,0,0,0.2);
+	/* box-shadow: 0.1px 18px 18px 2px rgba(0,0,0,0.2); */
 	border-radius: 50%;
 }
 
@@ -245,14 +247,14 @@ button{
 
 #volume_icon {
 	position: absolute;
-	bottom: 93px;
+	bottom: 90px;
 	right:8px;
 }
 
 #volumeUp {
 	-webkit-appearance: slider-vertical;
 	position: absolute;
-	bottom: 180px;
+	bottom: 160px;
 	cursor: pointer;
 	background: #cf3f3f;
 	width: 3px;
